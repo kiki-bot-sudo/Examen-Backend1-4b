@@ -1,0 +1,27 @@
+1.Explica dos diferencias entre una API REST y un servidor GraphQL.
+que las maneras de solicitar la informacion es diferente, mientras en rest pedidos la informacion mediante endpoints con las cosas ya establecidas,
+en GraphQL nosotros solicitamos la informacion y recibimos un Json con lo que buscamos.
+
+cada arquitectura se utiliza para distintas situaciones, lo principal es hacer que el usuario utilice menos solicitudes y solo reciba lo que busca,
+pero eso no quita que una sea mejor que la otra en rest establecemos el contenido que el usuario debe tener y el GraphQL el contenido que el usuario quiere,
+
+2.Indica una situación en la que conviene usar REST y otra en la que conviene usar GraphQL.
+REST: usaria REST cuando necesite listar, buscar y registrar equipos mediante operaciones claras.
+GraphQL: Usaria GraphQL cuando una aplicación de talleres donde una pantalla necesita solo nombres y otra también necesita instructor y cupo, eso me ayuda porque cada pantalla puede pedir los campos que requiere.
+
+3.¿Qué diferencia hay entre una imagen y un contenedor? ¿Qué papel cumple el Dockerfile en esa relación?
+que una imagen es el paquete que contiene python sus dependencias y mi codigo, un contenedor es una instancia de esa imagen ejecutandoce como mi API
+y Dockerfile es el archivo de configuracion que precisamente establece como se contruye mi api, que vercion de python usar, que instalar, que comando va a ejecutar.
+
+4.¿Para qué sirve Docker Compose? En el mapeo 8000:8000, ¿qué representa el primer 8000 y qué representa el segundo?
+para utilizar contenedores docker compose es el que permite configurar y ejecutar varios contenedores juntos, en mi caso compose.yaml define los servicios api y mysql y los levanto con docker compose up
+en el primer 8000 es el puerto de mi computadora en donde entro al navegador
+el segundo 8000 es el puerto dentro del contenedor que escucha Fastapi
+
+basicamente computadora:contenedor
+
+5.¿Por qué las laptops del ejercicio 1 se guardan en MySQL y no en una lista de Python? ¿Qué identifica la llave primaria id?
+Porque si no lo guardo en una base de datos como mysql cuando apague el servidor no se guardaria la informacion lo que es la persistencia de datos
+si uso una lista de python se guarda en memoria y entonces no se guardaria mis laptops creadas
+
+la llave primaria ID identifica a una laptop de otra como si hubiera una repetida distinguiria que son dos distintas pero con el mismo modelo, ram y marca
